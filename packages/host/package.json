@@ -1,0 +1,22 @@
+{
+  "name": "host",
+  "version": "1.0.0",
+  "description": "Sample host app.",
+  "main": "index.js",
+  "scripts": {
+    "build": "vite build",
+    "serve": "serve dist -p 3000"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "serve": "^14.2.0",
+    "vite": "^4.4.9",
+    "vite-plugin-externals": "^0.6.2"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
