@@ -1,12 +1,11 @@
 import { defineConfig } from 'vite';
 import { viteExternalsPlugin } from 'vite-plugin-externals';
-import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
 
 export default defineConfig({
   build: {
+    manifest: true,
     lib: {
       entry: 'src/index.jsx',
-      fileName: 'index',
       formats: ['umd'],
       name: 'Components',
     },
@@ -19,6 +18,5 @@ export default defineConfig({
       react: 'React',
       'react-dom': 'ReactDOM',
     }),
-    cssInjectedByJsPlugin(),
   ],
 });

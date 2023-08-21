@@ -4,6 +4,7 @@
   "description": "Sample host app.",
   "main": "index.js",
   "scripts": {
+    "start": "vite --open --port 3000",
     "build": "vite build",
     "serve": "serve dist -p 3000"
   },

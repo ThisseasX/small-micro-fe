@@ -1,15 +1,19 @@
 import React from 'react';
+import MicroFrontend from './MicroFrontend';
 import classes from './styles.module.css';
 
-const App = () => {
-  const Button = window?.Components?.Button;
+const App = () => (
+  <div className={classes.app}>
+    <h1>Hello</h1>
 
-  return (
-    <div className={classes.app}>
-      <h1>Hello</h1>
-      <Button />
-    </div>
-  );
-};
+    <MicroFrontend
+      id={'Button1'}
+      url="http://localhost:3001"
+      props={{
+        text: 'Hello World!',
+      }}
+    />
+  </div>
+);
 
 export default App;
