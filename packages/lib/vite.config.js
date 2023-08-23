@@ -1,22 +1,19 @@
 import { defineConfig } from 'vite';
-import { viteExternalsPlugin } from 'vite-plugin-externals';
+import federation from '@originjs/vite-plugin-federation';
 
 export default defineConfig({
   build: {
-    manifest: true,
-    lib: {
-      entry: 'src/index.jsx',
-      formats: ['umd'],
-      name: 'Components',
-    },
-  },
-  define: {
-    'process.env.NODE_ENV': '"production"',
+    target: 'esnext',
+    cssCodeSplit: false,
   },
   plugins: [
-    viteExternalsPlugin({
-      react: 'React',
-      'react-dom': 'ReactDOM',
+    federation({
+      name: 'my-lib',
+      filename: 'remoteEntry.js',
+      exposes: {
+        './Button': './src/Button',
+      },
+      shared: ['react'],
     }),
   ],
 });
